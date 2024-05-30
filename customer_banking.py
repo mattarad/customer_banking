@@ -20,8 +20,11 @@ def main():
 
     # Print out the interest earned and updated savings account balance with interest earned for the given months.
     # ADD YOUR CODE HERE
+    print("-"*60)
     print(f"Congratulations! You have earned {interest_earned:,.2f} during the time period!")
     print(f"and your updated savings balance is: {updated_savings_balance:,.2f}")
+    print("-"*60)
+
 
     # Prompt the user to set the CD balance, interest rate, and months for the CD account.
     # ADD YOUR CODE HERE
@@ -32,8 +35,11 @@ def main():
 
     # Print out the interest earned and updated CD account balance with interest earned for the given months.
     # ADD YOUR CODE HERE
+    print("-"*60)
     print(f"Congratulations! You have earned {interest_earned:,.2f} during the time period!")
     print(f"and your updated savings balance is: {updated_cd_balance:,.2f}")
+    print("-"*60)
+
 
 def request_customer_input(account_type):
     """
@@ -51,16 +57,29 @@ def request_customer_input(account_type):
         getting_account_maturity = True
         while getting_account_balance:
             account_balance_input = input(f"What is your {account_type} balance?\n Please enter in as a float: 000.00  ")
-            getting_account_balance = False if isfloat(account_balance_input) else True
-            balance = float(account_balance_input)
+            match isfloat(account_balance_input):
+                case True:
+                    balance = float(account_balance_input)
+                    getting_account_balance = False
+                case _:
+                    continue
         while getting_account_interest:
             account_interest_input = input(f"What is the interest you will be earning on {account_type}?\n Please enter as a float: 00.00  ")
-            getting_account_interest = False if isfloat(account_interest_input) else True
-            interest = float(account_interest_input)
+            match isfloat(account_interest_input):
+                case True:
+                    interest = float(account_interest_input)
+                    getting_account_interest = False
+                case _:
+                    continue
+            
         while getting_account_maturity:            
             account_maturity_input = input(f"What is the length (in months) for the {account_type}?\n please enter a integer: 00  ")
-            getting_account_maturity = False if account_maturity_input.isdigit() else True
-            maturity = int(account_maturity_input)
+            match account_maturity_input.isdigit():
+                case True:
+                    maturity = int(account_maturity_input)
+                    getting_account_maturity = False
+                case _:
+                    continue
         requesting_customer_input = False
     return balance, interest, maturity
 
