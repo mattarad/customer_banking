@@ -1,7 +1,11 @@
 """ Create a Account class with methods"""
 
 class Account:
-    """Creating an Account class with methods"""
+    """Creating an Account class with methods
+        params:
+        balance (float): initial balance to the account
+        interest (float): the interest gained on the account
+    """
     def __init__(self, balance, interest):
         self.balance = balance
         self.interest = interest
@@ -15,3 +19,13 @@ class Account:
     def set_interest(self, interest):
         """Sets the interest gained for the the account"""
         self.interest = interest
+
+    # simply returns balance
+    def get_balance(self):
+        """returns the account balance"""
+        return self.balance
+
+    # simply returns interest
+    def get_interest(self):
+        """returns the account interest"""
+        return self.interest
