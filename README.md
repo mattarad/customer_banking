@@ -25,3 +25,9 @@ python customer_banking.py
 4. the returned values are stored in variables and used as arguments when calling create_savings_account()
 5. App will then calculate and print the interest earned and the users new balance
 6. App will repeat for a CD account, reusing the request_customer_input(), and returning values to be used in create_cd_account()
+
+**_helper_functions.py has an isfloat function that uses error handling to check if an input can be turned into a float. It takes one parameter, tries to cast it as a float, if there is no error, it returns True. If there is an error, it returns False_**
+
+###### isfloat() was taken from this website:
+
+https://www.programiz.com/python-programming/examples/check-string-number#:~:text=In%20the%20function%20isfloat(),is%20raised%20and%20returns%20False%20
