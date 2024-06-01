@@ -1,6 +1,6 @@
 # Customer Banking App
 
-**this is a customer banking system that allows users to calculate and track interest earned on savings and CD accounts.**
+**this customer banking system allows users to calculate and track interest earned on savings and CD accounts using a class called Account.**
 
 **_By running this app, users are able to enter their savings and CD account info, view interest earned, and view updated balances after specified number of months._**
 
