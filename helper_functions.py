@@ -5,7 +5,7 @@ def request_customer_input(account_type):
         account interest (float)
         maturity/length (integer)
     params: account type (string)
-        **strictly for display purposes
+        the param accout_type is used in print statements
     """
     requesting_customer_input = True
     while requesting_customer_input:
